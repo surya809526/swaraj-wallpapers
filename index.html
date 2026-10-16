@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b14">
+<title>Swaraj Wallpapers — Premium HD Wallpapers</title>
+<style>
+:root{
+  --bg:#080b14;--panel:#111625;--line:#252d42;
+  --cyan:#55f5ff;--purple:#a78bfa;--text:#f5f7ff;--muted:#9ba6bf;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:10;background:#080b14ed;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{max-width:1400px;margin:auto;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-weight:900;font-size:20px;letter-spacing:1px}
+.logo span{color:var(--cyan)}
+.navlinks{display:flex;gap:17px;flex-wrap:wrap}
+a{color:var(--muted);text-decoration:none}
+a:hover{color:var(--cyan)}
+button,.outline{border:1px solid var(--cyan);color:var(--cyan);background:transparent;padding:10px 15px;border-radius:12px;transition:.2s}
+button:hover,.outline:hover{background:var(--cyan);color:#071016;box-shadow:0 0 22px #55f5ff35}
+main{max-width:1400px;margin:auto;padding:30px 5% 70px}
+.hero{min-height:300px;border:1px solid #26344c;border-radius:25px;padding:clamp(25px,6vw,65px);display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 20%,#49309a70,transparent 45%),radial-gradient(ellipse at 20% 100%,#006d7770,transparent 50%),#0c1120}
+.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #55f5ff55;border-radius:50%;right:7%;top:18%;box-shadow:0 0 60px #55f5ff20,inset 0 0 50px #a78bfa20}
+.hero-content{position:relative;z-index:1;max-width:650px}
+.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:3px;font-weight:800}
+h1{font-size:clamp(36px,6vw,66px);line-height:1.03;margin:15px 0}
+h1 em{font-style:normal;color:var(--cyan)}
+p{color:var(--muted);line-height:1.7}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.primary{background:var(--cyan);color:#061116;font-weight:800}
+.section{margin-top:42px;scroll-margin-top:90px}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:18px}
+h2{font-size:24px;margin:0}
+h2 span{color:var(--cyan)}
+.searchbar{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}
+input,select,textarea{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:13px;border-radius:11px;outline:none;min-width:0}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan)}
+#search{flex:1;min-width:190px}
+.categories{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0 23px}
+.cat{border-color:var(--line);color:var(--muted);padding:9px 14px}
+.cat.active{border-color:var(--cyan);background:#55f5ff14;color:var(--cyan)}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.wall{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);min-width:0}
+.wall img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;cursor:pointer;transition:transform .35s}
+.wall:hover img{transform:scale(1.045)}
+.wall-info{padding:12px}
+.wall-info h3{margin:0 0 5px;font-size:15px}
+.wall-info small{color:var(--muted)}
+.wall-actions{display:flex;gap:8px;margin-top:12px}
+.wall-actions button{flex:1;padding:8px 5px;font-size:12px}
+.fav{position:absolute;right:9px;top:9px;border:0;background:#080b14c9;color:white;border-radius:50%;width:38px;height:38px;padding:0;font-size:19px}
+.tag{position:absolute;left:9px;top:9px;background:#080b14d9;color:var(--cyan);padding:6px 8px;border-radius:8px;font-size:10px;font-weight:800}
+.empty{grid-column:1/-1;padding:35px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
+.studio{padding:24px;border:1px solid #4b3a7a;border-radius:20px;background:radial-gradient(ellipse at 100% 0%,#6037a72a,transparent 50%),var(--panel)}
+.formgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin:17px 0}
+.formgrid>*{width:100%}
+#prompt{width:100%;min-height:95px;resize:vertical}
+#generated{display:none;margin-top:20px}
+#generated img{width:100%;max-height:600px;object-fit:contain;border-radius:13px;background:#070911}
+.notice{font-size:12px;color:var(--muted)}
+.adminbox{border:1px solid var(--line);padding:20px;border-radius:16px;background:var(--panel)}
+.adminform{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.adminform input{width:100%}
+.adminform button{grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:30px 5%;text-align:center;color:var(--muted)}
+.modal{display:none;position:fixed;inset:0;z-index:30;background:#02040bea;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-inner{max-width:900px;width:100%;max-height:95vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px}
+.modal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+#previewImage{display:block;max-width:100%;max-height:70vh;margin:auto;object-fit:contain;border-radius:10px}
+.modal-buttons{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--cyan);color:#061116;padding:12px 18px;border-radius:12px;font-weight:700;z-index:50;display:none;max-width:90%;text-align:center}
+@media(max-width:950px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.hero:after{right:-80px}}
+@media(max-width:650px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.nav{padding:13px 4%}.navlinks{gap:10px;font-size:13px}.logo{font-size:17px}main{padding:20px 4% 50px}.hero{min-height:280px}.hero:after{opacity:.35}.formgrid{grid-template-columns:1fr}.adminform{grid-template-columns:1fr}.adminform button{grid-column:auto}.wall-info{padding:9px}.wall-actions{gap:5px}.wall-actions button{font-size:11px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="logo">SWARAJ<span>.</span> WALLPAPERS</div>
+    <nav class="navlinks">
+      <a href="#gallery">Explore</a>
+      <a href="#studio">AI Studio</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#admin">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">YOUR SCREEN. YOUR STYLE.</div>
+      <h1>Upgrade Your<br><em>Wallpaper Game.</em></h1>
+      <p>Explore stunning backgrounds for your phone, laptop and desktop. Discover your next favourite wallpaper.</p>
+      <div class="hero-actions">
+        <button class="primary" onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})">Explore Wallpapers ↗</button>
+        <button onclick="document.querySelector('#studio').scrollIntoView({behavior:'smooth'})">✦ AI Wallpaper Studio</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="section-head">
+      <h2>Explore <span>Wallpapers</span></h2>
+      <span id="count" class="notice"></span>
+    </div>
+    <div class="searchbar">
+      <input id="search" placeholder="Search galaxy, cars, anime, nature..." oninput="render()">
+      <button onclick="randomWallpaper()">🎲 Surprise Me</button>
+    </div>
+    <div class="categories" id="categories"></div>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <section class="section" id="studio">
+    <div class="section-head"><h2>✦ AI <span>Wallpaper Studio</span></h2></div>
+    <div class="studio">
+      <p>Describe the wallpaper you imagine. Generate a new image using the external image service.</p>
+      <textarea id="prompt" placeholder="Example: cinematic neon blue cyberpunk city at night, rain, ultra detailed, no text"></textarea>
+      <div class="formgrid">
+        <select id="style">
+          <option value="cinematic">Cinematic</option>
+          <option value="photorealistic">Photorealistic</option>
+          <option value="anime art">Anime</option>
+          <option value="3D digital art">3D Digital Art</option>
+          <option value="minimalist">Minimalist</option>
+          <option value="devotional digital art">Devotional</option>
+          <option value="abstract digital art">Abstract</option>
+        </select>
+        <select id="ratio">
+          <option value="portrait">Phone 9:16</option>
+          <option value="landscape">Desktop 16:9</option>
+          <option value="square">Square 1:1</option>
+        </select>
+        <select id="resolution">
+          <option value="standard">Standard preview</option>
+          <option value="4k">4K target (not guaranteed)</option>
+          <option value="8k">8K target (not guaranteed)</option>
+        </select>
+      </div>
+      <button class="primary" id="generateBtn" onclick="generateWallpaper()">Generate Wallpaper ✨</button>
+      <div id="generated">
+        <p id="generatedLabel"></p>
+        <img id="generatedImage" alt="AI generated wallpaper">
+        <div class="hero-actions">
+          <button class="primary" onclick="downloadGenerated()">Download Image</button>
+          <button onclick="saveGenerated()">♡ Save to Favorites</button>
+          <button onclick="openGenerated()">Open Full Image ↗</button>
+        </div>
+      </div>
+      <p class="notice">AI images use a third-party service. Availability, image quality, download permissions and actual resolution depend on that provider. Do not enter private information in prompts.</p>
+    </div>
+  </section>
+
+  <section class="section" id="favorites">
+    <div class="section-head"><h2>Your <span>Favorites</span> ♡</h2><button onclick="showFavorites()">View Favorites</button></div>
+    <div class="gallery" id="favoritesGrid"><div class="empty">Save wallpapers with ♡ and find them here.</div></div>
+  </section>
+
+  <section class="section" id="admin">
+    <div class="section-head"><h2>Wallpaper <span>Admin Panel</span></h2></div>
+    <div class="adminbox">
+      <p>Add a wallpaper using an image URL. This demo stores entries only in this browser. It has no login, shared database or secure access control.</p>
+      <div class="adminform">
+        <input id="adminTitle" placeholder="Wallpaper title">
+        <input id="adminCategory" placeholder="Category (e.g. Gaming)">
+        <input id="adminUrl" placeholder="Direct image URL (https://...)">
+        <button class="primary" onclick="addWallpaper()">Add Wallpaper</button>
+      </div>
+      <p class="notice">For a public production admin panel, connect a backend/database and authentication before deployment.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">SWARAJ<span>.</span> WALLPAPERS</div>
+  <p>Made for wallpaper lovers. Personal project by Swaraj.</p>
+  <small>Wallpaper images may be hosted by third-party services.</small>
+</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-inner">
+    <div class="modal-top"><strong id="previewTitle">Wallpaper Preview</strong><button onclick="closeModal()">✕ Close</button></div>
+    <img id="previewImage" alt="Wallpaper preview">
+    <div class="modal-buttons">
+      <button class="primary" onclick="downloadPreview()">Download</button>
+      <button onclick="togglePreviewFavorite()">♡ Favorite</button>
+      <button onclick="openPreview()">Open Image ↗</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const baseWallpapers = [
+ {title:"Cosmic Dream",category:"Galaxy",trending:true,url:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Purple Nebula",category:"Galaxy",trending:true,url:"https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Milky Way",category:"Galaxy",trending:false,url:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Mountain Mist",category:"Nature",trending:true,url:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Green Paradise",category:"Nature",trending:false,url:"https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Ocean Blue",category:"Nature",trending:false,url:"https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Anime Sky",category:"Anime",trending:true,url:"https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Neon City",category:"Cyberpunk",trending:true,url:"https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Gaming Setup",category:"Gaming",trending:false,url:"https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Supercar Mood",category:"Cars",trending:true,url:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Midnight Drive",category:"Cars",trending:false,url:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=85"},
+ {title:"AMOLED Black",category:"AMOLED",trending:false,url:"https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Blue Abstract",category:"Abstract",trending:true,url:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Golden Sunset",category:"Nature",trending:false,url:"https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Cyber Dreams",category:"Cyberpunk",trending:false,url:"https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Gaming World",category:"Gaming",trending:true,url:"https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Dreamy Clouds",category:"Anime",trending:false,url:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Night Sky",category:"Galaxy",trending:false,url:"https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Forest Escape",category:"Nature",trending:false,url:"https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Minimal Dark",category:"AMOLED",trending:true,url:"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Sacred Sunrise",category:"Devotional",trending:false,url:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85"},
+ {title:"Abstract Flow",category:"Abstract",trending:false,url:"https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?auto=format&fit=crop&w=1000&q=85"}
+];
+
+let customWallpapers = readStore("sw_custom",[]);
+let favorites = readStore("sw_favorites",[]);
+let activeCategory = "All";
+let currentPreview = null;
+let generatedUrl = "";
+
+function readStore(key,fallback){
+ try { return JSON.parse(localStorage.getItem(key)) || fallback; }
+ catch(e){ return fallback; }
+}
+function allWallpapers(){ return [...baseWallpapers,...customWallpapers]; }
+function escapeHTML(s){
+ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function categoriesList(){
+ return ["All","Trending","Galaxy","Nature","Anime","Gaming","Cars","Cyberpunk","AMOLED","Abstract","Devotional"];
+}
+function drawCategories(){
+ document.getElementById("categories").innerHTML=categoriesList().map(c=>
+ `<button class="cat ${c===activeCategory?"active":""}" onclick="setCategory('${c}')">${c==="Trending"?"🔥 ":""}${c}</button>`
+ ).join("");
+}
+function setCategory(c){ activeCategory=c;drawCategories();render(); }
+function matches(w){
+ const term=document.getElementById("search").value.toLowerCase().trim();
+ const categoryOK=activeCategory==="All" ||
+ (activeCategory==="Trending"?w.trending:w.category.toLowerCase()===activeCategory.toLowerCase());
+ return categoryOK && (w.title+" "+w.category).toLowerCase().includes(term);
+}
+function isFavorite(w){return favorites.some(f=>f.url===w.url);}
+function card(w){
+ const safeTitle=escapeHTML(w.title), safeCategory=escapeHTML(w.category);
+ const url=escapeHTML(w.url);
+ return `<article class="wall">
+ <span class="tag">${w.trending?"🔥 TRENDING":safeCategory.toUpperCase()}</span>
+ <button class="fav" title="Toggle favorite" onclick="toggleFavoriteByUrl('${encodeURIComponent(w.url)}')">${isFavorite(w)?"♥":"♡"}</button>
+ <img src="${url}" alt="${safeTitle}" loading="lazy" onclick="openModalByUrl('${encodeURIComponent(w.url)}')" onerror="this.style.opacity='.25';this.alt='Image unavailable — try another wallpaper'">
+ <div class="wall-info"><h3>${safeTitle}</h3><small>${safeCategory}</small>
+ <div class="wall-actions">
+ <button onclick="openModalByUrl('${encodeURIComponent(w.url)}')">Preview</button>
+ <button onclick="downloadByUrl('${encodeURIComponent(w.url)}','${encodeURIComponent(w.title)}')">↓ Save</button>
+ </div></div></article>`;
+}
+function render(){
+ const list=allWallpapers().filter(matches);
+ document.getElementById("galleryGrid").innerHTML=list.length?list.map(card).join():'<div class="empty">No wallpapers found. Try another search.</div>';
+ document.getElementById("count").textContent=list.length+" wallpapers";
+}
+function showFavorites(){
+ activeCategory="All";drawCategories();
+ const grid=document.getElementById("favoritesGrid");
+ grid.innerHTML=favorites.length?favorites.map(card).join():'<div class="empty">No favorites yet. Tap ♡ on a wallpaper to save it.</div>';
+ document.getElementById("favorites").scrollIntoView({behavior:"smooth"});
+}
+function toggleFavoriteByUrl(encoded){
+ const url=decodeURIComponent(encoded);
+ const w=allWallpapers().find(x=>x.url===url)||favorites.find(x=>x.url===url);
+ if(!w)return;
+ if(isFavorite(w))favorites=favorites.filter(x=>x.url!==url);
+ else favorites.unshift(w);
+ localStorage.setItem("sw_favorites",JSON.stringify(favorites));
+ render();showFavoriteCards();toast(isFavorite(w)?"Added to favorites":"Removed from favorites");
+}
+function toggleFavorite(w){
+ if(isFavorite(w))favorites=favorites.filter(x=>x.url!==w.url);
+ else favorites.unshift(w);
+ localStorage.setItem("sw_favorites",JSON.stringify(favorites));
+ render();showFavoriteCards();
+}
+function showFavoriteCards(){
+ document.getElementById("favoritesGrid").innerHTML=favorites.length?favorites.map(card).join():'<div class="empty">No favorites yet. Tap ♡ on a wallpaper to save it.</div>';
+}
+function openModalByUrl(encoded){
+ const url=decodeURIComponent(encoded);
+ currentPreview=allWallpapers().find(x=>x.url===url)||favorites.find(x=>x.url===url)||{title:"Wallpaper",category:"Custom",url};
+ document.getElementById("previewTitle").textContent=currentPreview.title;
+ document.getElementById("previewImage").src=currentPreview.url;
+ document.getElementById("modal").classList.add("open");
+}
+function closeModal(){document.getElementById("modal").classList.remove("open")}
+function togglePreviewFavorite(){if(currentPreview){toggleFavorite(currentPreview);toast(isFavorite(currentPreview)?"Saved to favorites":"Removed from favorites")}}
+function openPreview(){if(currentPreview)window.open(currentPreview.url,"_blank","noopener")}
+function downloadPreview(){if(currentPreview)downloadImage(currentPreview.url,currentPreview.title)}
+async function downloadByUrl(encodedUrl,encodedTitle){downloadImage(decodeURIComponent(encodedUrl),decodeURIComponent(encodedTitle))}
+async function downloadImage(url,title){
+ try{
+  const response=await fetch(url);
+  if(!response.ok)throw new Error("Image download blocked");
+  const blob=await response.blob();
+  const objectUrl=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=objectUrl;a.download=(title||"swaraj-wallpaper").replace(/[^\w-]+/g,"-")+".jpg";
+  document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(objectUrl);
+  toast("Download started");
+ }catch(e){
+  window.open(url,"_blank","noopener");
+  toast("Image opened in a new tab. Use the browser menu to save it.");
+ }
+}
+function randomWallpaper(){
+ const list=allWallpapers().filter(w=>activeCategory==="All"||activeCategory==="Trending"&&w.trending||w.category===activeCategory);
+ const w=list[Math.floor(Math.random()*list.length)]||baseWallpapers[0];
+ openModalByUrl(encodeURIComponent(w.url));
+}
+function toast(message){
+ const el=document.getElementById("toast");el.textContent=message;el.style.display="block";
+ clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.style.display="none",2800);
+}
+function imageDimensions(ratio){
+ if(ratio==="landscape")return {width:1280,height:720};
+ if(ratio==="square")return {width:1024,height:1024};
+ return {width:720,height:1280};
+}
+function generateWallpaper(){
+ const prompt=document.getElementById("prompt").value.trim();
+ if(!prompt){toast("Pehle apna wallpaper prompt likho.");return;}
+ const btn=document.getElementById("generateBtn");
+ const generated=document.getElementById("generated");
+ const image=document.getElementById("generatedImage");
+ const style=document.getElementById("style").value;
+ const ratio=document.getElementById("ratio").value;
+ const resolution=document.getElementById("resolution").value;
+ const dims=imageDimensions(ratio);
+ const fullPrompt=prompt+", "+style+" wallpaper, highly detailed, beautiful lighting, clean composition, no text, no watermark";
+ generatedUrl="https://image.pollinations.ai/prompt/"+encodeURIComponent(fullPrompt)+"?width="+dims.width+"&height="+dims.height+"&seed="+Math.floor(Math.random()*999999)+"&nologo=true";
+ btn.disabled=true;btn.textContent="Generating…";
+ generated.style.display="block";
+ document.getElementById("generatedLabel").textContent="Requested target: "+resolution.toUpperCase()+". Actual resolution depends on the image service.";
+ image.onload=()=>{btn.disabled=false;btn.textContent="Generate Wallpaper ✨";toast("Image generated. Check the result below.");};
+ image.onerror=()=>{btn.disabled=false;btn.textContent="Generate Wallpaper ✨";toast("Image service failed. Try again later or use a shorter prompt.");};
+ image.src=generatedUrl;
+}
+function downloadGenerated(){if(generatedUrl)downloadImage(generatedUrl,"swaraj-ai-wallpaper")}
+function openGenerated(){if(generatedUrl)window.open(generatedUrl,"_blank","noopener")}
+function saveGenerated(){
+ if(!generatedUrl)return;
+ const w={title:"AI Wallpaper",category:"AI Generated",url:generatedUrl,trending:false};
+ if(!isFavorite(w))favorites.unshift(w);
+ localStorage.setItem("sw_favorites",JSON.stringify(favorites));
+ showFavoriteCards();toast("AI wallpaper saved to this browser's favorites.");
+}
+function addWallpaper(){
+ const title=document.getElementById("adminTitle").value.trim();
+ const category=document.getElementById("adminCategory").value.trim()||"Custom";
+ const url=document.getElementById("adminUrl").value.trim();
+ if(!title||!url){toast("Title aur image URL dono bharo.");return;}
+ try{const parsed=new URL(url);if(parsed.protocol!=="https:"&&parsed.protocol!=="http:")throw new Error();}
+ catch(e){toast("Valid http/https image URL dalo.");return;}
+ customWallpapers.unshift({title,category,url,trending:false});
+ localStorage.setItem("sw_custom",JSON.stringify(customWallpapers));
+ document.getElementById("adminTitle").value="";
+ document.getElementById("adminCategory").value="";
+ document.getElementById("adminUrl").value="";
+ render();toast("Wallpaper added to this browser.");
+}
+drawCategories();render();showFavoriteCards();
+</script>
+</body>
+</html>
