@@ -3,256 +3,472 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080b12">
-<title>Swaraj Wallpapers | HD Wallpaper Collection</title>
+<meta name="description" content="Explore beautiful HD wallpapers for your phone and desktop with Swaraj Wallpapers.">
+<title>Swaraj Wallpapers — Discover Your Next Wallpaper</title>
+
 <style>
-:root{--bg:#080b12;--panel:#111725;--line:#263149;--text:#f4f7ff;--muted:#9ca9c0;--cyan:#58f3ff;--purple:#9e8cff}
+:root {
+  --bg:#080b12;
+  --panel:#111725;
+  --line:#273148;
+  --text:#f4f7ff;
+  --muted:#9ba8bf;
+  --cyan:#58f3ff;
+  --purple:#a58bff;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
-header{position:sticky;top:0;z-index:10;background:#080b12ed;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav{max-width:1450px;margin:auto;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-size:21px;font-weight:900;letter-spacing:1.5px}.logo span{color:var(--cyan)}
-.nav small{color:var(--muted)}
-main{max-width:1450px;margin:auto;padding:26px 5% 60px}
-.hero{position:relative;overflow:hidden;padding:clamp(28px,6vw,66px);border-radius:25px;border:1px solid #273c52;background:radial-gradient(ellipse at 90% 20%,#6236b850,transparent 45%),radial-gradient(ellipse at 10% 100%,#007e8c40,transparent 50%),linear-gradient(125deg,#111b2b,#0a0e19)}
-.hero:after{content:"";position:absolute;width:220px;height:220px;right:8%;top:18%;border:1px solid #58f3ff50;border-radius:50%;box-shadow:0 0 65px #58f3ff20,inset 0 0 65px #9e8cff20}
-.hero-content{position:relative;z-index:1;max-width:680px}
-.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:4px}
-h1{font-size:clamp(36px,6.5vw,68px);line-height:1.04;margin:17px 0}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+}
+button,input{font:inherit}
+button{
+  cursor:pointer;border:1px solid var(--cyan);
+  background:transparent;color:var(--cyan);
+  border-radius:11px;padding:11px 15px;
+  font-weight:700;transition:.2s;
+}
+button:hover{
+  background:var(--cyan);color:#061116;
+  box-shadow:0 0 20px #58f3ff30;
+}
+button:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+.primary{background:var(--cyan);color:#061116}
+header{
+  position:sticky;top:0;z-index:10;
+  background:#080b12ed;backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1450px;margin:auto;padding:17px 5%;
+  display:flex;justify-content:space-between;
+  align-items:center;gap:12px;
+}
+.logo{font-size:21px;font-weight:900;letter-spacing:1.4px}
+.logo span{color:var(--cyan)}
+.nav-label{color:var(--muted);font-size:11px;letter-spacing:2px}
+main{max-width:1450px;margin:auto;padding:28px 5% 60px}
+.hero{
+  position:relative;overflow:hidden;
+  min-height:300px;padding:clamp(28px,6vw,65px);
+  display:flex;align-items:center;
+  border:1px solid #293c53;border-radius:25px;
+  background:
+    radial-gradient(ellipse at 85% 15%,#6542ba55,transparent 45%),
+    radial-gradient(ellipse at 10% 100%,#007b8650,transparent 48%),
+    linear-gradient(125deg,#121a2b,#090d18);
+}
+.hero:after{
+  content:"";position:absolute;right:8%;top:20%;
+  width:200px;height:200px;border:1px solid #58f3ff55;
+  border-radius:50%;box-shadow:0 0 65px #58f3ff20,
+  inset 0 0 60px #a58bff20;
+}
+.hero-content{position:relative;z-index:1;max-width:670px}
+.eyebrow{
+  color:var(--cyan);font-size:11px;
+  font-weight:800;letter-spacing:4px;
+}
+h1{font-size:clamp(38px,6.5vw,68px);line-height:1.04;margin:17px 0}
 h1 span{color:var(--cyan)}
-.hero p{color:var(--muted);line-height:1.7;max-width:500px}
-.hero-bottom{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:22px}
-button{cursor:pointer;border:1px solid var(--cyan);background:transparent;color:var(--cyan);border-radius:11px;padding:11px 15px;font-weight:700;transition:.2s}
-button:hover{background:var(--cyan);color:#061116;box-shadow:0 0 20px #58f3ff2e}
-.primary{background:var(--cyan);color:#071016}
+.hero p{max-width:490px;color:var(--muted);line-height:1.8}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
 .section{margin-top:36px;scroll-margin-top:85px}
-.heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-h2{font-size:24px;margin:0}h2 span{color:var(--cyan)}
-.muted{color:var(--muted);font-size:13px}
-.tools{display:flex;gap:10px;margin:22px 0 15px}
-input{min-width:0;flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--text);outline:none}
-input:focus{border-color:var(--cyan)}
+.heading{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;
+}
+h2{font-size:24px;margin:0}
+h2 span{color:var(--cyan)}
+.muted{font-size:12px;color:var(--muted)}
+.tools{display:flex;gap:10px;margin:20px 0 15px}
+#search{
+  flex:1;min-width:0;background:var(--panel);
+  color:var(--text);border:1px solid var(--line);
+  border-radius:12px;padding:14px 15px;outline:none;
+}
+#search:focus{border-color:var(--cyan)}
 .categories{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 23px}
-.cat{border-color:var(--line);color:var(--muted);font-size:13px;padding:9px 13px}
+.cat{border-color:var(--line);color:var(--muted);font-size:12px;padding:9px 13px}
 .cat.active{color:var(--cyan);border-color:var(--cyan);background:#58f3ff12}
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.card{min-width:0;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:16px;transition:transform .25s,border-color .25s}
-.card:hover{transform:translateY(-4px);border-color:#58f3ff85}
-.photo{position:relative;overflow:hidden;background:#121a2b}
-.photo img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;cursor:zoom-in;transition:transform .35s}
+.card{
+  min-width:0;overflow:hidden;background:var(--panel);
+  border:1px solid var(--line);border-radius:16px;
+  transition:transform .25s,border-color .25s;
+}
+.card:hover{transform:translateY(-4px);border-color:#58f3ff80}
+.photo{position:relative;overflow:hidden;background:#131a29}
+.photo img{
+  display:block;width:100%;aspect-ratio:3/4;object-fit:cover;
+  cursor:zoom-in;transition:transform .35s;
+}
 .card:hover .photo img{transform:scale(1.035)}
-.number{position:absolute;left:10px;top:10px;padding:6px 8px;background:#060913d9;border:1px solid #ffffff20;border-radius:7px;font-size:10px;letter-spacing:.7px}
+.tag{
+  position:absolute;top:10px;left:10px;z-index:1;
+  background:#080b12d9;color:var(--cyan);
+  border:1px solid #ffffff20;border-radius:7px;
+  padding:6px 8px;font-size:10px;font-weight:800;
+}
 .info{padding:12px}
-.info h3{font-size:14px;margin:0 0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.actions{display:flex;gap:7px;margin-top:11px}
+.info h3{
+  margin:0 0 6px;font-size:14px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.info .creator{
+  display:block;overflow:hidden;white-space:nowrap;
+  text-overflow:ellipsis;color:var(--muted);font-size:11px;
+}
+.actions{display:flex;gap:7px;margin-top:12px}
 .actions button{flex:1;min-width:0;padding:9px 4px;font-size:11px}
-.download{background:var(--cyan);color:#061116}
-.empty{grid-column:1/-1;text-align:center;padding:35px;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}
-footer{text-align:center;padding:28px 5%;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
-.modal{display:none;position:fixed;inset:0;z-index:30;background:#02040bed;align-items:center;justify-content:center;padding:16px}
+.download{background:var(--cyan);color:#071016}
+.empty{
+  grid-column:1/-1;text-align:center;padding:38px 20px;
+  border:1px dashed var(--line);border-radius:15px;color:var(--muted);
+  line-height:1.8;
+}
+.pagination{
+  display:flex;justify-content:center;align-items:center;
+  flex-wrap:wrap;gap:12px;margin-top:25px;
+}
+#pageLabel{color:var(--muted);font-size:13px}
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 5%;text-align:center;color:var(--muted);font-size:12px;
+}
+.modal{
+  display:none;position:fixed;inset:0;z-index:30;
+  background:#02040bf2;align-items:center;justify-content:center;padding:15px;
+}
 .modal.open{display:flex}
-.modalbox{width:min(850px,100%);max-height:95vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:13px}
-.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-#bigImage{display:block;max-width:100%;max-height:72vh;margin:auto;object-fit:contain;border-radius:10px}
-.modalactions{display:flex;justify-content:center;gap:10px;margin-top:13px}
-.toast{position:fixed;z-index:50;bottom:18px;left:50%;transform:translateX(-50%);display:none;max-width:90%;padding:12px 18px;background:var(--cyan);color:#061116;border-radius:10px;font-weight:800;text-align:center}
-@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero:after{right:-70px}}
-@media(max-width:650px){main{padding:18px 4% 45px}.nav{padding:15px 4%}.logo{font-size:17px}.nav small{font-size:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hero{padding:28px 22px}.hero:after{opacity:.25}.info{padding:9px}.actions{gap:5px}.actions button{font-size:10px}.tools{flex-wrap:wrap}.tools input{width:100%;flex-basis:100%}}
+.modal-box{
+  width:min(850px,100%);max-height:95vh;overflow:auto;
+  padding:14px;background:var(--panel);
+  border:1px solid var(--line);border-radius:17px;
+}
+.modal-head{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:12px;margin-bottom:12px;
+}
+#previewImage{
+  display:block;max-width:100%;max-height:72vh;
+  object-fit:contain;margin:auto;border-radius:10px;
+}
+.modal-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.toast{
+  position:fixed;z-index:50;bottom:18px;left:50%;
+  transform:translateX(-50%);display:none;
+  max-width:90%;padding:12px 17px;
+  background:var(--cyan);color:#061116;
+  border-radius:11px;font-weight:700;text-align:center;
+}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero:after{right:-60px}}
+@media(max-width:650px){
+  main{padding:18px 4% 45px}
+  .nav{padding:15px 4%}
+  .logo{font-size:17px}
+  .nav-label{font-size:9px;letter-spacing:1px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .hero{padding:28px 21px;min-height:280px}
+  .hero:after{opacity:.25;right:-95px}
+  .info{padding:9px}
+  .actions{gap:5px}
+  .actions button{font-size:10px}
+  .tools{flex-wrap:wrap}
+  #search{flex-basis:100%;width:100%}
+}
 </style>
 </head>
+
 <body>
 <header>
   <div class="nav">
     <div class="logo">SWARAJ<span>.</span> WALLPAPERS</div>
-    <small>HD COLLECTION</small>
+    <div class="nav-label">HD WALLPAPER COLLECTION</div>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="hero-content">
-      <div class="eyebrow">YOUR SCREEN. YOUR STYLE.</div>
-      <h1>Find Your Next<br><span>Wallpaper.</span></h1>
-      <p>Explore beautiful backgrounds for your phone and desktop. Discover your favourites and save images directly to your device.</p>
-      <div class="hero-bottom">
-        <button class="primary" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">Explore Collection ↓</button>
-        <span class="muted">100 wallpapers · Free browsing</span>
+      <div class="eyebrow">DISCOVER SOMETHING BEAUTIFUL</div>
+      <h1>Your Screen.<br><span>Your Style.</span></h1>
+      <p>Explore beautiful wallpapers for your phone and desktop. Find your favourite image and download it from its original source.</p>
+      <div class="hero-actions">
+        <button class="primary" onclick="scrollToGallery()">Explore Wallpapers ↓</button>
+        <button onclick="refreshWallpapers()">↻ Refresh Collection</button>
       </div>
     </div>
   </section>
 
   <section class="section" id="collection">
     <div class="heading">
-      <h2>Wallpaper <span>Collection</span></h2>
-      <span class="muted" id="resultCount">100 wallpapers</span>
+      <h2>Explore <span>Wallpapers</span></h2>
+      <span class="muted" id="resultCount">Loading images…</span>
     </div>
+
     <div class="tools">
-      <input id="search" type="search" placeholder="Search wallpapers..." autocomplete="off">
-      <button onclick="showToday()">✦ Today's Picks</button>
+      <input id="search" type="search" placeholder="Search wallpapers, e.g. galaxy, nature, cars…" autocomplete="off">
+      <button onclick="refreshWallpapers()">Search ↗</button>
     </div>
+
     <div class="categories" id="categories"></div>
-    <div class="grid" id="gallery"></div>
+    <div class="grid" id="gallery">
+      <div class="empty">Loading wallpapers…</div>
+    </div>
+
+    <div class="pagination" id="pagination" hidden>
+      <button id="prevButton" onclick="changePage(-1)">← Previous</button>
+      <span id="pageLabel">Page 1</span>
+      <button id="nextButton" onclick="changePage(1)">Next →</button>
+    </div>
   </section>
 </main>
 
 <footer>
   <div class="logo">SWARAJ<span>.</span> WALLPAPERS</div>
   <p>Discover your next favourite background.</p>
-  <span>Images are provided by an external image service.</span>
+  <span>Images provided by Pixabay. Image availability and download conditions may vary.</span>
 </footer>
 
 <div class="modal" id="modal" onclick="if(event.target===this)closePreview()">
-  <div class="modalbox">
-    <div class="modalhead"><strong id="bigTitle">Wallpaper</strong><button onclick="closePreview()">✕</button></div>
-    <img id="bigImage" alt="Wallpaper preview">
-    <div class="modalactions">
-      <button class="primary" onclick="downloadCurrent()">↓ Download</button>
-      <button onclick="openOriginal()">Open Image ↗</button>
+  <div class="modal-box">
+    <div class="modal-head">
+      <strong id="previewTitle">Wallpaper Preview</strong>
+      <button onclick="closePreview()">✕ Close</button>
+    </div>
+    <img id="previewImage" alt="Wallpaper preview">
+    <div class="modal-actions">
+      <button class="primary" onclick="downloadCurrent()">↓ Download / Source</button>
+      <button onclick="openCurrentSource()">Open Original ↗</button>
     </div>
   </div>
 </div>
+
 <div class="toast" id="toast"></div>
 
 <script>
-const categories=["All","Nature","Galaxy","Anime","Gaming","Cars","Cyberpunk","AMOLED","Abstract","Architecture"];
-const names=[
-"Mountain Dreams","Ocean Blue","Forest Escape","Golden Sunset","Quiet Lake",
-"Cosmic Dust","Deep Space","Starry Night","Purple Nebula","Moonlight",
-"Anime Horizon","Dream World","Anime Sunset","Sky Adventure","Fantasy Scene",
-"Gaming World","Neon Arena","Pixel Universe","Dark Gamer","Virtual Reality",
-"Midnight Drive","Supercar Mood","Classic Ride","Road Trip","Speed Lines",
-"Neon City","Cyber Streets","Future World","Digital Dreams","Electric Night",
-"Dark Elegance","Black Geometry","Shadow Flow","Minimal Black","Night Mode",
-"Abstract Motion","Color Wave","Liquid Art","Gradient Flow","Modern Shapes",
-"Mountain Peak","Autumn Forest","Desert Dunes","Winter Valley","Green World",
-"Blue Planet","Cosmic Horizon","Solar Glow","Space Voyage","Aurora Sky",
-"City Lights","Urban Night","Glass Tower","Modern Skyline","City Geometry",
-"Hidden Waterfall","Tropical Escape","Wild Nature","River Journey","Misty Woods",
-"Dreamy Clouds","Purple Horizon","Fantasy Castle","Mystic Valley","Magical Night",
-"Neon Racing","Street Machine","Urban Wheels","Road Horizon","Fast Lane",
-"Blue Circuit","Cyber Horizon","Future Grid","Digital Storm","Neon Dreams",
-"Pure Darkness","Black Marble","Dark Texture","Minimal Space","Shadow Lines",
-"Color Spectrum","Fluid Shapes","Crystal Forms","Light Trails","Prism Glow",
-"Ocean Horizon","Rocky Coast","Mountain Lake","Wild Flowers","Sunrise Peaks",
-"Star Cluster","Galaxy Spiral","Space Clouds","Lunar Surface","Cosmic Glow",
-"City Skyline","Modern Building","Night Architecture","Urban Lines","Skyward"
+const categories = [
+  "All","Nature","Galaxy","Anime","Gaming",
+  "Cars","Cyberpunk","AMOLED","Abstract","Architecture"
 ];
 
-// Image provider supplies randomly selected photography for each stable seed.
-const wallpapers=names.map((name,i)=>{
-  const category=categories[1+(i% (categories.length-1))];
-  return {
-    id:i+1,
-    title:name,
-    category,
-    url:"https://picsum.photos/seed/swaraj-wallpaper-"+(i+1)+"/800/1200"
-  };
+let activeCategory = "All";
+let wallpapers = [];
+let currentPage = 1;
+let totalResults = 0;
+let currentWallpaper = null;
+let requestId = 0;
+let searchTimer = null;
+
+const searchInput = document.getElementById("search");
+const gallery = document.getElementById("gallery");
+
+function safe(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[ch]));
+}
+
+function drawCategories() {
+  document.getElementById("categories").innerHTML = categories.map(category =>
+    `<button class="cat ${category === activeCategory ? "active" : ""}"
+      onclick="setCategory('${category}')">${category}</button>`
+  ).join("");
+}
+
+function setCategory(category) {
+  activeCategory = category;
+  currentPage = 1;
+  drawCategories();
+  loadWallpapers();
+}
+
+function scrollToGallery() {
+  document.getElementById("collection").scrollIntoView({behavior:"smooth"});
+}
+
+function refreshWallpapers() {
+  currentPage = 1;
+  loadWallpapers();
+}
+
+async function loadWallpapers() {
+  const thisRequest = ++requestId;
+  const query = searchInput.value.trim();
+  const category = activeCategory === "All" ? "all" : activeCategory.toLowerCase();
+
+  gallery.innerHTML = '<div class="empty">Loading wallpapers…</div>';
+  document.getElementById("pagination").hidden = true;
+  document.getElementById("resultCount").textContent = "Loading…";
+
+  try {
+    const params = new URLSearchParams({
+      category,
+      q: query,
+      page: String(currentPage)
+    });
+
+    const response = await fetch("/api/wallpapers?" + params.toString());
+    const data = await response.json();
+
+    if (thisRequest !== requestId) return;
+
+    if (!response.ok) {
+      throw new Error(data.error || "Could not load wallpapers");
+    }
+
+    wallpapers = Array.isArray(data.images) ? data.images : [];
+    totalResults = Number(data.total) || 0;
+
+    renderWallpapers();
+  } catch (error) {
+    if (thisRequest !== requestId) return;
+
+    gallery.innerHTML = `
+      <div class="empty">
+        <strong>Wallpapers load nahi ho paaye.</strong><br>
+        Internet connection, Vercel deployment aur API configuration check karo.<br><br>
+        <button onclick="loadWallpapers()">Try Again</button>
+      </div>`;
+
+    document.getElementById("resultCount").textContent = "Unable to load";
+    document.getElementById("pagination").hidden = true;
+    console.error("Wallpaper API error:", error);
+  }
+}
+
+function renderWallpapers() {
+  document.getElementById("resultCount").textContent =
+    totalResults.toLocaleString() + " images found";
+
+  if (!wallpapers.length) {
+    gallery.innerHTML = `
+      <div class="empty">
+        No wallpapers found.<br>
+        Try a different keyword or category.
+      </div>`;
+    document.getElementById("pagination").hidden = true;
+    return;
+  }
+
+  gallery.innerHTML = wallpapers.map((wallpaper, index) => `
+    <article class="card">
+      <div class="photo">
+        <span class="tag">HD COLLECTION</span>
+        <img
+          src="${safe(wallpaper.url)}"
+          alt="${safe(wallpaper.title)} wallpaper"
+          loading="lazy"
+          onclick="preview(${index})"
+          onerror="this.style.opacity='.3';this.alt='Image unavailable'">
+      </div>
+      <div class="info">
+        <h3>${safe(wallpaper.title || "Wallpaper")}</h3>
+        <span class="creator">By ${safe(wallpaper.creator || "Pixabay contributor")}</span>
+        <div class="actions">
+          <button onclick="preview(${index})">Preview</button>
+          <button class="download" onclick="downloadWallpaper(${index})">↓ Download</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  const pagination = document.getElementById("pagination");
+  pagination.hidden = false;
+  document.getElementById("pageLabel").textContent = "Page " + currentPage;
+  document.getElementById("prevButton").disabled = currentPage <= 1;
+
+  // Pixabay commonly allows up to 200 results per page; this endpoint
+  // requests 100. A full page means another page may be available.
+  document.getElementById("nextButton").disabled = wallpapers.length < 100;
+}
+
+function changePage(amount) {
+  currentPage = Math.max(1, currentPage + amount);
+  loadWallpapers();
+  scrollToGallery();
+}
+
+function preview(index) {
+  const wallpaper = wallpapers[index];
+  if (!wallpaper) return;
+
+  currentWallpaper = wallpaper;
+  document.getElementById("previewTitle").textContent =
+    wallpaper.title || "Wallpaper";
+  document.getElementById("previewImage").src = wallpaper.url;
+  document.getElementById("modal").classList.add("open");
+}
+
+function closePreview() {
+  document.getElementById("modal").classList.remove("open");
+}
+
+function openCurrentSource() {
+  if (currentWallpaper?.source) {
+    window.open(currentWallpaper.source, "_blank", "noopener,noreferrer");
+  } else if (currentWallpaper?.url) {
+    window.open(currentWallpaper.url, "_blank", "noopener,noreferrer");
+  }
+}
+
+function downloadCurrent() {
+  if (currentWallpaper) {
+    downloadWallpaperByObject(currentWallpaper);
+  }
+}
+
+function downloadWallpaper(index) {
+  const wallpaper = wallpapers[index];
+  if (wallpaper) downloadWallpaperByObject(wallpaper);
+}
+
+function downloadWallpaperByObject(wallpaper) {
+  // Open the image's original provider page. This avoids assuming
+  // cross-origin download access and lets users follow source terms.
+  const destination = wallpaper.source || wallpaper.url;
+
+  if (!destination) {
+    notify("Image source unavailable.");
+    return;
+  }
+
+  window.open(destination, "_blank", "noopener,noreferrer");
+  notify("Image source opened. Use the provider page to save the image.");
+}
+
+function notify(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.style.display = "none";
+  }, 2800);
+}
+
+searchInput.addEventListener("input", () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    currentPage = 1;
+    loadWallpapers();
+  }, 450);
 });
 
-let activeCategory="All";
-let visibleWallpapers=[];
-let currentWallpaper=null;
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closePreview();
+});
 
-function safe(s){
- return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
-function dayNumber(){
- const now=new Date();
- return Math.floor(Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())/86400000);
-}
-function dailyWallpapers(){
- const day=dayNumber();
- return wallpapers.map((w,i)=>({...w,dayIndex:(i+day)%wallpapers.length}))
-   .sort((a,b)=>a.dayIndex-b.dayIndex);
-}
-function drawCategories(){
- document.getElementById("categories").innerHTML=categories.map(c=>
-  `<button class="cat ${activeCategory===c?"active":""}" onclick="setCategory('${c}')">${c}</button>`
- ).join("");
-}
-function setCategory(c){
- activeCategory=c;
- drawCategories();
- render();
-}
-function render(){
- const query=document.getElementById("search").value.trim().toLowerCase();
- visibleWallpapers=dailyWallpapers().filter(w=>
-  (activeCategory==="All"||w.category===activeCategory)&&
-  (w.title+" "+w.category).toLowerCase().includes(query)
- );
- document.getElementById("resultCount").textContent=visibleWallpapers.length+" wallpapers";
- document.getElementById("gallery").innerHTML=visibleWallpapers.length?
-  visibleWallpapers.map(w=>`
-   <article class="card">
-    <div class="photo">
-     <span class="number">WALLPAPER ${String(w.id).padStart(3,"0")}</span>
-     <img src="${w.url}" alt="${safe(w.title)} wallpaper" loading="lazy"
-      onclick="preview(${w.id})"
-      onerror="this.alt='Image unavailable';this.style.opacity='.35'">
-    </div>
-    <div class="info">
-     <h3>${safe(w.title)}</h3>
-     <span class="muted">${safe(w.category)}</span>
-     <div class="actions">
-      <button onclick="preview(${w.id})">Preview</button>
-      <button class="download" onclick="downloadWallpaper(${w.id})">↓ Download</button>
-     </div>
-    </div>
-   </article>`).join("")
-  :'<div class="empty">No wallpapers found. Try another search or category.</div>';
-}
-function showToday(){
- activeCategory="All";
- document.getElementById("search").value="";
- drawCategories();
- render();
- document.getElementById("collection").scrollIntoView({behavior:"smooth"});
- notify("Today's wallpaper selection is ready.");
-}
-function preview(id){
- currentWallpaper=wallpapers.find(w=>w.id===id);
- if(!currentWallpaper)return;
- document.getElementById("bigTitle").textContent=currentWallpaper.title;
- document.getElementById("bigImage").src=currentWallpaper.url;
- document.getElementById("modal").classList.add("open");
-}
-function closePreview(){document.getElementById("modal").classList.remove("open")}
-function openOriginal(){if(currentWallpaper)window.open(currentWallpaper.url,"_blank","noopener")}
-function downloadCurrent(){if(currentWallpaper)downloadWallpaper(currentWallpaper.id)}
-async function downloadWallpaper(id){
- const w=wallpapers.find(x=>x.id===id);
- if(!w)return;
- try{
-  const response=await fetch(w.url);
-  if(!response.ok)throw new Error("Download unavailable");
-  const blob=await response.blob();
-  const blobURL=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=blobURL;
-  a.download="swaraj-wallpaper-"+String(w.id).padStart(3,"0")+".jpg";
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(()=>URL.revokeObjectURL(blobURL),1500);
-  notify("Download started!");
- }catch(error){
-  window.open(w.url,"_blank","noopener");
-  notify("Image opened. Use the browser menu to save it.");
- }
-}
-function notify(message){
- const el=document.getElementById("toast");
- el.textContent=message;
- el.style.display="block";
- clearTimeout(window.toastTimer);
- window.toastTimer=setTimeout(()=>el.style.display="none",2500);
-}
-document.getElementById("search").addEventListener("input",render);
 drawCategories();
-render();
+loadWallpapers();
 </script>
 </body>
 </html>
