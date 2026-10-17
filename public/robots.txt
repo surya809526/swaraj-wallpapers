@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://swaraj-wallpapers.vercel.app/sitemap.xml
