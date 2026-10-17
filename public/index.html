@@ -2,737 +2,796 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Swaraj Wallpapers | Free HD Mobile & Desktop Wallpapers</title>
-<meta name="description" content="Discover free HD wallpapers for your phone and desktop. Explore nature, galaxy, anime, gaming, cars, AMOLED, Hindu gods and more.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#080b12">
-<link rel="canonical" href="https://swaraj-wallpapers.vercel.app/">
+  <title>Swaraj Wallpapers - Free HD & 4K Wallpapers</title>
+  <meta name="description" content="Explore free HD and 4K wallpapers for your phone. Discover nature, anime, gaming, cars, galaxy, AMOLED, cyberpunk and more at Swaraj Wallpapers.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#080b14">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Swaraj Wallpapers">
-<meta property="og:title" content="Swaraj Wallpapers | Free HD Wallpapers">
-<meta property="og:description" content="Discover beautiful HD wallpapers for your mobile and desktop.">
-<meta property="og:url" content="https://swaraj-wallpapers.vercel.app/">
-<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://swaraj-wallpapers.vercel.app/">
+  <link rel="icon" href="/favicon.ico">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Swaraj Wallpapers",
-  "url": "https://swaraj-wallpapers.vercel.app/",
-  "description": "Free HD wallpapers for mobile and desktop."
-}
-</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Swaraj Wallpapers - Free HD Wallpapers">
+  <meta property="og:description" content="Discover beautiful HD and 4K wallpapers for your phone.">
+  <meta property="og:url" content="https://swaraj-wallpapers.vercel.app/">
+  <meta property="og:site_name" content="Swaraj Wallpapers">
 
-<style>
-:root {
-  color-scheme: dark;
-  --bg: #080b12;
-  --panel: #111725;
-  --border: #273148;
-  --text: #f4f7ff;
-  --muted: #aab5c8;
-  --cyan: #58f3ff;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-}
-button, input { font: inherit; }
-button { cursor: pointer; }
-button:focus-visible, input:focus-visible {
-  outline: 2px solid var(--cyan);
-  outline-offset: 3px;
-}
-header {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 15px 5%;
-  background: #080b12ee;
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(14px);
-}
-.brand {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-.accent { color: var(--cyan); }
-.header-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  padding: 10px 13px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--panel);
-  color: var(--text);
-  text-decoration: none;
-}
-.btn.primary, .btn.active {
-  border-color: var(--cyan);
-  color: var(--cyan);
-}
-.btn:disabled { opacity: .5; cursor: wait; }
-main {
-  width: min(1200px, 92%);
-  margin: auto;
-}
-.hero {
-  margin: 26px 0;
-  padding: clamp(25px, 6vw, 60px);
-  border: 1px solid #26364d;
-  border-radius: 22px;
-  background:
-    radial-gradient(ellipse at 85% 10%, #174052 0, transparent 42%),
-    linear-gradient(120deg, #14263a, #151126);
-}
-.eyebrow {
-  color: var(--cyan);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-h1 {
-  font-size: clamp(37px, 7vw, 68px);
-  line-height: 1.05;
-  margin: 16px 0;
-}
-h2 { font-size: clamp(24px, 4vw, 32px); }
-p { color: var(--muted); line-height: 1.7; }
-section { scroll-margin-top: 90px; }
-.toolbar {
-  display: flex;
-  gap: 10px;
-  margin: 18px 0;
-}
-#search {
-  flex: 1;
-  min-width: 0;
-  padding: 13px 15px;
-  color: var(--text);
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-}
-.categories {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 16px 0;
-}
-.chip {
-  padding: 9px 13px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--panel);
-  color: var(--muted);
-}
-.chip.active {
-  color: var(--cyan);
-  border-color: var(--cyan);
-}
-.status {
-  margin: 18px 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 15px;
-}
-.card {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--panel);
-}
-.thumb-wrap {
-  position: relative;
-  background: #101522;
-}
-.thumb {
-  display: block;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  cursor: zoom-in;
-}
-.heart {
-  position: absolute;
-  top: 9px;
-  right: 9px;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #ffffff55;
-  border-radius: 50%;
-  background: #080b12dd;
-  color: white;
-  font-size: 22px;
-}
-.heart.saved { color: #ff6b91; }
-.card-info { padding: 11px; }
-.card-title {
-  margin: 0 0 11px;
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-.card-actions {
-  display: flex;
-  gap: 7px;
-  flex-wrap: wrap;
-}
-.card-actions .btn {
-  flex: 1;
-  padding: 9px 8px;
-  font-size: 12px;
-}
-.empty {
-  grid-column: 1 / -1;
-  padding: 35px 15px;
-  text-align: center;
-  border: 1px dashed var(--border);
-  border-radius: 14px;
-  color: var(--muted);
-}
-#more {
-  display: block;
-  margin: 25px auto;
-}
-footer {
-  margin-top: 50px;
-  padding: 28px 15px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  color: var(--muted);
-}
-footer a { color: var(--cyan); }
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Swaraj Wallpapers">
+  <meta name="twitter:description" content="Explore free HD wallpapers for your phone.">
 
-/* Full-screen wallpaper preview */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  background: #03050af5;
-}
-.modal.open { display: flex; }
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: min(100%, 1000px);
-  height: 100%;
-}
-.modal-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-.modal-image {
-  display: block;
-  max-width: 100%;
-  max-height: calc(100vh - 150px);
-  min-height: 0;
-  object-fit: contain;
-  border-radius: 8px;
-}
-.modal-actions {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (max-width: 600px) {
-  header { padding: 12px 4%; }
-  .brand { font-size: 15px; }
-  .header-actions .btn { padding: 8px; font-size: 12px; }
-  main { width: 92%; }
-  .hero { margin: 16px 0; padding: 24px 18px; }
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .card-info { padding: 8px; }
-  .card-actions .btn { padding: 9px 5px; font-size: 11px; }
-  .modal { padding: 10px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Swaraj Wallpapers",
+    "url": "https://swaraj-wallpapers.vercel.app/",
+    "description": "Discover free HD and 4K wallpapers for your phone."
   }
-}
-</style>
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b14;
+      --panel: #101726;
+      --border: #26354b;
+      --cyan: #36e5ff;
+      --text: #f4f7ff;
+      --muted: #a4b2c8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    button, input { font: inherit; }
+
+    button {
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    a { color: var(--cyan); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(8,11,20,.96);
+      border-bottom: 1px solid var(--border);
+      padding: 15px 5%;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--cyan);
+      font-size: 22px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .nav a:last-child {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    main {
+      width: 92%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .hero {
+      padding: 42px 0 25px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    .hero h1 span { color: var(--cyan); }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .search {
+      display: flex;
+      max-width: 650px;
+      gap: 8px;
+      margin: 24px auto 0;
+    }
+
+    .search input {
+      min-width: 0;
+      flex: 1;
+      padding: 14px;
+      color: white;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      outline: none;
+    }
+
+    .search input:focus { border-color: var(--cyan); }
+
+    .primary {
+      padding: 13px 17px;
+      border: 0;
+      border-radius: 11px;
+      background: var(--cyan);
+      color: #041018;
+      font-weight: 800;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 25px 0 15px;
+    }
+
+    .section-title h2 { margin: 0; font-size: 21px; }
+
+    .categories {
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding: 2px 0 12px;
+      scrollbar-width: thin;
+    }
+
+    .chip {
+      white-space: nowrap;
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: var(--panel);
+    }
+
+    .chip.active {
+      background: var(--cyan);
+      color: #041018;
+      border-color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .wallpaper {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 14px;
+      min-width: 0;
+    }
+
+    .image-wrap {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      background: #111827;
+      overflow: hidden;
+    }
+
+    .image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transition: transform .3s;
+    }
+
+    .wallpaper:hover img { transform: scale(1.035); }
+
+    .heart {
+      position: absolute;
+      right: 9px;
+      top: 9px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #ffffff55;
+      border-radius: 50%;
+      background: #050912cc;
+      font-size: 20px;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+    }
+
+    .card-actions button {
+      flex: 1;
+      min-width: 0;
+      padding: 10px 5px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: #182338;
+      font-size: 13px;
+    }
+
+    .card-actions .download {
+      background: var(--cyan);
+      color: #041018;
+      border-color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .status {
+      color: var(--muted);
+      text-align: center;
+      padding: 25px 10px;
+      line-height: 1.6;
+    }
+
+    .load-wrap { text-align: center; padding: 22px 0 35px; }
+
+    .load-wrap button {
+      padding: 13px 24px;
+      border: 1px solid var(--cyan);
+      background: transparent;
+      color: var(--cyan);
+      border-radius: 10px;
+    }
+
+    .intro {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      padding: 20px;
+      border-radius: 14px;
+      margin: 10px 0 35px;
+      line-height: 1.7;
+    }
+
+    .intro h2 { font-size: 20px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 5%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    footer a { margin: 0 8px; }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #000e;
+      padding: 15px;
+    }
+
+    .modal.show { display: flex; }
+
+    .modal-content {
+      max-width: 95vw;
+      max-height: 95vh;
+      text-align: center;
+    }
+
+    .modal img {
+      display: block;
+      max-width: 90vw;
+      max-height: 78vh;
+      object-fit: contain;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .modal button {
+      margin: 10px 5px 0;
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--panel);
+    }
+
+    @media (max-width: 950px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 13px 4%; }
+      main { width: 94%; }
+      .hero { padding-top: 30px; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .card-actions { gap: 5px; padding: 7px; }
+      .card-actions button { font-size: 12px; }
+      .brand { font-size: 19px; }
+      .search .primary { padding: 12px; }
+    }
+  </style>
 </head>
 
 <body>
 <header>
-  <div class="brand">SWARAJ<span class="accent">.</span> WALLPAPERS</div>
-  <div class="header-actions">
-    <button class="btn" id="homeBtn">Home</button>
-    <button class="btn" id="favoritesBtn">♥ Favorites <span id="favCount">0</span></button>
-  </div>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="/">SWARAJ WALLPAPERS</a>
+    <a href="#favorites" id="favoritesLink">♥ My Favorites</a>
+  </nav>
 </header>
 
 <main>
   <section class="hero">
-    <div class="eyebrow">YOUR WALLPAPER DESTINATION</div>
-    <h1>Your Screen.<br><span class="accent">Your Style.</span></h1>
-    <p>Discover beautiful wallpapers for your phone and desktop. Preview, download and save your favourites.</p>
-    <button class="btn primary" id="exploreBtn">Explore Wallpapers ↓</button>
+    <h1>Discover Your <span>Perfect Wallpaper</span></h1>
+    <p>
+      Explore beautiful HD wallpapers for your phone. Discover nature,
+      anime, gaming, cars, galaxy and more. Find a new look for your screen.
+    </p>
+
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search"
+        placeholder="Search wallpapers..." aria-label="Search wallpapers">
+      <button class="primary" type="submit">Search</button>
+    </form>
   </section>
 
-  <section id="collection">
-    <h2 id="sectionTitle">Explore <span class="accent">Wallpapers</span></h2>
-    <p>Search your favourite style or choose a category.</p>
-
-    <div class="toolbar">
-      <input id="search" type="search" maxlength="80"
-        placeholder="Search nature, galaxy, cars..."
-        aria-label="Search wallpapers">
-      <button class="btn primary" id="searchBtn">Search</button>
+  <section aria-labelledby="categoryHeading">
+    <div class="section-title">
+      <h2 id="categoryHeading">Explore Categories</h2>
     </div>
-
-    <nav class="categories" id="categories" aria-label="Wallpaper categories"></nav>
-    <div class="status" id="count" aria-live="polite">Loading wallpapers...</div>
-    <div class="grid" id="gallery">
-      <div class="empty">Loading wallpapers...</div>
+    <div class="categories" id="categories">
+      <button class="chip active" data-category="all">All</button>
+      <button class="chip" data-category="nature">Nature</button>
+      <button class="chip" data-category="galaxy">Galaxy</button>
+      <button class="chip" data-category="anime">Anime</button>
+      <button class="chip" data-category="gaming">Gaming</button>
+      <button class="chip" data-category="cars">Cars</button>
+      <button class="chip" data-category="cyberpunk">Cyberpunk</button>
+      <button class="chip" data-category="amoled">AMOLED</button>
+      <button class="chip" data-category="abstract">Abstract</button>
+      <button class="chip" data-category="architecture">Architecture</button>
+      <button class="chip" data-category="hindu gods">Hindu Gods</button>
     </div>
-    <button class="btn primary" id="more">Load More Wallpapers</button>
+  </section>
+
+  <section aria-labelledby="wallpaperHeading">
+    <div class="section-title">
+      <h2 id="wallpaperHeading">HD Wallpapers</h2>
+      <span id="resultCount" class="status" style="padding:0"></span>
+    </div>
+    <div class="grid" id="wallpaperGrid"></div>
+    <div id="status" class="status" role="status">Loading wallpapers...</div>
+    <div class="load-wrap">
+      <button id="loadMore" type="button" hidden>Load More Wallpapers</button>
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Free HD Wallpapers for Your Phone</h2>
+    <p>
+      Welcome to Swaraj Wallpapers, a wallpaper discovery website for
+      mobile users. Explore nature, galaxy, anime, gaming, cars, abstract
+      art and other wallpaper styles. Preview images, save your favorites,
+      and open wallpapers in full screen before downloading.
+    </p>
+    <p>
+      Find a wallpaper that matches your style and give your phone a fresh
+      look. New wallpaper results depend on the availability of our image
+      service.
+    </p>
   </section>
 </main>
 
 <footer>
-  <strong>SWARAJ WALLPAPERS</strong>
-  <p>Discover wallpapers for your next screen look.</p>
+  <p>© <span id="year"></span> Swaraj Wallpapers. All rights reserved.</p>
+  <a href="/">Home</a>
   <a href="/sitemap.xml">Sitemap</a>
+  <a href="/robots.txt">Robots</a>
 </footer>
 
-<div class="modal" id="modal" role="dialog" aria-modal="true"
-  aria-label="Wallpaper preview">
+<div class="modal" id="previewModal" role="dialog"
+  aria-modal="true" aria-label="Wallpaper preview">
   <div class="modal-content">
-    <div class="modal-top">
-      <strong id="modalTitle">Wallpaper preview</strong>
-      <button class="btn" id="closeModal">✕ Close</button>
-    </div>
-    <img class="modal-image" id="modalImage" alt="Wallpaper preview">
-    <div class="modal-actions">
-      <button class="btn primary" id="modalDownload">⬇ Download HD</button>
-      <button class="btn" id="modalFavorite">♡ Save Favorite</button>
-      <a class="btn" id="openOriginal" href="#" target="_blank" rel="noopener noreferrer">Open Original ↗</a>
+    <img id="previewImage" alt="Wallpaper full screen preview">
+    <div>
+      <button id="previewDownload" type="button">Download</button>
+      <button id="closePreview" type="button">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-"use strict";
+(() => {
+  "use strict";
 
-const API_URL = "/api/wallpapers";
-const MAX_PAGES = 20;
+  const API_URL = "/api/wallpapers";
+  const grid = document.getElementById("wallpaperGrid");
+  const statusBox = document.getElementById("status");
+  const loadMoreButton = document.getElementById("loadMore");
+  const searchInput = document.getElementById("searchInput");
+  const resultCount = document.getElementById("resultCount");
+  const modal = document.getElementById("previewModal");
+  const previewImage = document.getElementById("previewImage");
 
-const categories = [
-  {label: "All", value: "all"},
-  {label: "Nature", value: "nature"},
-  {label: "Galaxy", value: "galaxy"},
-  {label: "Anime", value: "anime"},
-  {label: "Gaming", value: "gaming"},
-  {label: "Cars", value: "cars"},
-  {label: "Cyberpunk", value: "cyberpunk"},
-  {label: "AMOLED", value: "amoled"},
-  {label: "Abstract", value: "abstract"},
-  {label: "Architecture", value: "architecture"},
-  {label: "Hindu Gods", value: "gods", query: "Hindu gods"}
-];
+  const FAVORITES_KEY = "swarajWallpaperFavorites";
+  const MAX_PAGES = 20;
 
-const gallery = document.getElementById("gallery");
-const searchInput = document.getElementById("search");
-const count = document.getElementById("count");
-const moreButton = document.getElementById("more");
-const favoritesButton = document.getElementById("favoritesBtn");
-const modal = document.getElementById("modal");
+  let category = "all";
+  let query = "";
+  let page = 1;
+  let loading = false;
+  let hasMore = true;
+  let showingFavorites = false;
+  let currentPreview = null;
+  let requestNumber = 0;
+  let images = [];
+  let total = null;
 
-let selectedCategory = "all";
-let currentPage = 1;
-let totalResults = 0;
-let currentImages = [];
-let selectedWallpaper = null;
-let favoritesMode = false;
-let loading = false;
-let searchTimer = null;
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-function escapeHTML(value) {
-  return String(value == null ? "" : value).replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
-}
-
-function wallpaperKey(item) {
-  return String(item.id || item.url || "");
-}
-
-function readFavorites() {
-  try {
-    const data = JSON.parse(localStorage.getItem("swarajWallpaperFavorites") || "[]");
-    return Array.isArray(data) ? data : [];
-  } catch (error) {
-    return [];
-  }
-}
-
-function writeFavorites(items) {
-  try {
-    localStorage.setItem("swarajWallpaperFavorites", JSON.stringify(items));
-  } catch (error) {
-    alert("Favorites save nahi ho paaye. Browser storage check karein.");
-  }
-  updateFavoriteCount();
-}
-
-function isFavorite(item) {
-  return readFavorites().some(saved => wallpaperKey(saved) === wallpaperKey(item));
-}
-
-function updateFavoriteCount() {
-  document.getElementById("favCount").textContent = readFavorites().length;
-}
-
-function drawCategories() {
-  const nav = document.getElementById("categories");
-  nav.innerHTML = "";
-
-  categories.forEach(item => {
-    const button = document.createElement("button");
-    button.className = "chip" + (selectedCategory === item.value ? " active" : "");
-    button.textContent = item.label;
-
-    button.addEventListener("click", () => {
-      selectedCategory = item.value;
-      favoritesMode = false;
-      favoritesButton.classList.remove("active");
-      searchInput.value = item.query || "";
-      currentPage = 1;
-      drawCategories();
-      loadImages(false);
-    });
-
-    nav.appendChild(button);
-  });
-}
-
-function showEmpty(message) {
-  gallery.innerHTML = "";
-  const box = document.createElement("div");
-  box.className = "empty";
-  box.textContent = message;
-  gallery.appendChild(box);
-}
-
-function renderImages(items, append) {
-  if (!append) gallery.innerHTML = "";
-
-  if (!items.length && !append) {
-    showEmpty(favoritesMode
-      ? "Abhi koi favourite wallpaper save nahi hai."
-      : "Koi wallpaper nahi mila. Dusra search try karein.");
-    return;
+  function getFavorites() {
+    try {
+      const value = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+      return Array.isArray(value) ? value : [];
+    } catch (_) {
+      return [];
+    }
   }
 
-  items.forEach(item => {
-    if (!item || !item.url) return;
+  function saveFavorites(list) {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(list));
+  }
 
-    const title = item.title || item.tags || "HD Wallpaper";
-    const saved = isFavorite(item);
-    const card = document.createElement("article");
-    card.className = "card";
+  function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, character => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[character]);
+  }
 
-    card.innerHTML = `
-      <div class="thumb-wrap">
-        <img class="thumb" src="${escapeHTML(item.url)}"
-          alt="${escapeHTML(title)}" loading="lazy" decoding="async">
-        <button class="heart ${saved ? "saved" : ""}"
-          aria-label="${saved ? "Remove favorite" : "Save favorite"}"
-          title="${saved ? "Remove favorite" : "Save favorite"}">${saved ? "♥" : "♡"}</button>
-      </div>
-      <div class="card-info">
-        <h3 class="card-title">${escapeHTML(title)}</h3>
-        <div class="card-actions">
-          <button class="btn primary download-btn">⬇ Download</button>
-          <button class="btn preview-btn">Preview</button>
+  function getImageURL(item) {
+    if (typeof item === "string") return item;
+    return item?.largeImageURL || item?.largeImageUrl ||
+      item?.webformatURL || item?.webformatUrl ||
+      item?.image || item?.imageUrl || item?.src || item?.url || "";
+  }
+
+  function normalizeItem(item) {
+    const url = getImageURL(item);
+    if (!url || typeof url !== "string") return null;
+    if (!/^https?:\/\//i.test(url)) return null;
+
+    return {
+      url,
+      id: String(item?.id ?? url),
+      title: String(item?.tags ?? item?.title ?? item?.name ?? "HD Wallpaper")
+    };
+  }
+
+  function extractResponse(data) {
+    const list = Array.isArray(data) ? data :
+      data?.hits || data?.images || data?.wallpapers ||
+      data?.results || data?.data || [];
+
+    const parsed = Array.isArray(list)
+      ? list.map(normalizeItem).filter(Boolean)
+      : [];
+
+    const count = Number(
+      data?.total ?? data?.totalHits ?? data?.totalResults
+    );
+
+    return {
+      images: parsed,
+      total: Number.isFinite(count) && count >= 0 ? count : null
+    };
+  }
+
+  function setStatus(message) {
+    statusBox.textContent = message;
+  }
+
+  function updateCount() {
+    resultCount.textContent = showingFavorites
+      ? images.length + " saved"
+      : images.length + " loaded";
+  }
+
+  function render() {
+    const favorites = getFavorites();
+    const visible = showingFavorites
+      ? images.filter(item => favorites.includes(item.url))
+      : images;
+
+    grid.innerHTML = "";
+
+    if (!visible.length) {
+      setStatus(showingFavorites
+        ? "No favorites saved yet. Tap ♥ on a wallpaper to save it."
+        : "No wallpapers found. Try another search or category.");
+      updateCount();
+      return;
+    }
+
+    setStatus("");
+    updateCount();
+
+    const fragment = document.createDocumentFragment();
+
+    visible.forEach(item => {
+      const isFavorite = favorites.includes(item.url);
+      const article = document.createElement("article");
+      article.className = "wallpaper";
+
+      article.innerHTML = `
+        <div class="image-wrap">
+          <img src="${escapeHTML(item.url)}"
+               alt="${escapeHTML(item.title)} wallpaper"
+               loading="lazy" decoding="async">
+          <button class="heart" type="button"
+            aria-label="${isFavorite ? "Remove from" : "Add to"} favorites"
+            title="Toggle favorite">${isFavorite ? "♥" : "♡"}</button>
         </div>
-      </div>`;
+        <div class="card-actions">
+          <button class="preview" type="button">Preview</button>
+          <button class="download" type="button">Download</button>
+        </div>`;
 
-    const image = card.querySelector(".thumb");
-    image.addEventListener("click", () => openPreview(item));
-    image.addEventListener("error", () => {
-      image.alt = "Wallpaper could not be loaded";
+      const image = article.querySelector("img");
+      image.addEventListener("error", () => {
+        image.alt = "Wallpaper image unavailable";
+        article.style.display = "none";
+      }, { once: true });
+
+      image.addEventListener("click", () => openPreview(item));
+
+      article.querySelector(".preview").addEventListener("click", () => {
+        openPreview(item);
+      });
+
+      article.querySelector(".heart").addEventListener("click", () => {
+        toggleFavorite(item);
+      });
+
+      article.querySelector(".download").addEventListener("click", () => {
+        downloadWallpaper(item);
+      });
+
+      fragment.appendChild(article);
     });
 
-    card.querySelector(".heart").addEventListener("click", () => toggleFavorite(item));
-    card.querySelector(".preview-btn").addEventListener("click", () => openPreview(item));
-    card.querySelector(".download-btn").addEventListener("click", () => downloadWallpaper(item));
+    grid.appendChild(fragment);
+  }
 
-    gallery.appendChild(card);
+  async function loadWallpapers(reset = false) {
+    if (loading) return;
+    if (showingFavorites) {
+      render();
+      loadMoreButton.hidden = true;
+      return;
+    }
+    if (!hasMore && !reset) return;
+
+    if (reset) {
+      requestNumber++;
+      page = 1;
+      images = [];
+      total = null;
+      hasMore = true;
+      grid.innerHTML = "";
+      loadMoreButton.hidden = true;
+      setStatus("Loading wallpapers...");
+    }
+
+    const thisRequest = requestNumber;
+    loading = true;
+    loadMoreButton.disabled = true;
+
+    try {
+      const params = new URLSearchParams({
+        category: category === "all" ? "all" : category,
+        page: String(page),
+        q: query
+      });
+
+      const response = await fetch(`${API_URL}?${params.toString()}`, {
+        headers: { "Accept": "application/json" }
+      });
+
+      if (!response.ok) {
+        throw new Error("Wallpaper service returned HTTP " + response.status);
+      }
+
+      const data = await response.json();
+
+      if (thisRequest !== requestNumber) return;
+
+      const result = extractResponse(data);
+      const existing = new Set(images.map(item => item.url));
+      const fresh = result.images.filter(item => !existing.has(item.url));
+
+      images = images.concat(fresh);
+      if (result.total !== null) total = result.total;
+
+      if (!result.images.length || result.images.length < 1) {
+        hasMore = false;
+      } else if (total !== null) {
+        hasMore = images.length < total && page < MAX_PAGES;
+      } else {
+        hasMore = result.images.length > 0 && page < MAX_PAGES;
+      }
+
+      if (fresh.length === 0) hasMore = false;
+
+      page++;
+      render();
+
+      if (!images.length) {
+        setStatus("No wallpapers returned. Please try again later.");
+      }
+
+      loadMoreButton.hidden = !hasMore;
+    } catch (error) {
+      if (thisRequest !== requestNumber) return;
+
+      console.error("Wallpaper loading failed:", error);
+      setStatus("Wallpapers could not load. Please check your internet and try again.");
+      loadMoreButton.hidden = images.length === 0;
+    } finally {
+      if (thisRequest === requestNumber) {
+        loading = false;
+        loadMoreButton.disabled = false;
+      }
+    }
+  }
+
+  function toggleFavorite(item) {
+    const favorites = getFavorites();
+    const exists = favorites.includes(item.url);
+
+    const updated = exists
+      ? favorites.filter(url => url !== item.url)
+      : favorites.concat(item.url);
+
+    saveFavorites(updated);
+
+    if (showingFavorites) {
+      images = images.filter(image => updated.includes(image.url));
+    }
+
+    render();
+  }
+
+  async function downloadWallpaper(item) {
+    try {
+      const response = await fetch(item.url);
+      if (!response.ok) throw new Error("Download failed");
+
+      const blob = await response.blob();
+      const objectURL = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = objectURL;
+      link.download = "swaraj-wallpaper.jpg";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(objectURL), 30000);
+    } catch (_) {
+      window.open(item.url, "_blank", "noopener,noreferrer");
+      alert("Image opened in a new tab. Use the browser menu to download it.");
+    }
+  }
+
+  function openPreview(item) {
+    currentPreview = item;
+    previewImage.src = item.url;
+    previewImage.alt = item.title + " wallpaper";
+    modal.classList.add("show");
+  }
+
+  function closePreview() {
+    modal.classList.remove("show");
+    previewImage.removeAttribute("src");
+    currentPreview = null;
+  }
+
+  document.getElementById("previewDownload").addEventListener("click", () => {
+    if (currentPreview) downloadWallpaper(currentPreview);
   });
-}
 
-async function loadImages(append) {
-  if (loading) return;
+  document.getElementById("closePreview").addEventListener("click", closePreview);
 
-  if (favoritesMode) {
-    const saved = readFavorites();
-    document.getElementById("sectionTitle").textContent = "Your Favorite Wallpapers";
-    count.textContent = saved.length + " saved wallpaper(s)";
-    moreButton.style.display = "none";
-    renderImages(saved, false);
-    return;
-  }
+  modal.addEventListener("click", event => {
+    if (event.target === modal) closePreview();
+  });
 
-  loading = true;
-  moreButton.disabled = true;
-  moreButton.textContent = "Loading...";
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closePreview();
+  });
 
-  document.getElementById("sectionTitle").innerHTML =
-    'Explore <span class="accent">Wallpapers</span>';
-  moreButton.style.display = "block";
+  document.getElementById("searchForm").addEventListener("submit", event => {
+    event.preventDefault();
+    query = searchInput.value.trim();
+    showingFavorites = false;
+    loadWallpapers(true);
+  });
 
-  if (!append) {
-    currentImages = [];
-    totalResults = 0;
-    gallery.innerHTML = '<div class="empty">Loading wallpapers...</div>';
-  }
+  document.getElementById("categories").addEventListener("click", event => {
+    const button = event.target.closest("button[data-category]");
+    if (!button) return;
 
-  try {
-    const query = searchInput.value.trim().slice(0, 80);
-    const apiCategory = selectedCategory === "gods" ? "all" : selectedCategory;
-    const params = new URLSearchParams({
-      category: apiCategory,
-      page: String(currentPage),
-      q: query
+    document.querySelectorAll(".chip").forEach(chip => {
+      chip.classList.toggle("active", chip === button);
     });
 
-    const response = await fetch(API_URL + "?" + params.toString());
-    if (!response.ok) throw new Error("Wallpaper API error: " + response.status);
+    category = button.dataset.category;
+    showingFavorites = false;
+    query = searchInput.value.trim();
+    document.getElementById("wallpaperHeading").textContent =
+      category === "all" ? "HD Wallpapers" :
+      category.charAt(0).toUpperCase() + category.slice(1) + " Wallpapers";
 
-    const data = await response.json();
-    const images = Array.isArray(data.images) ? data.images : [];
+    loadWallpapers(true);
+  });
 
-    currentImages = append ? currentImages.concat(images) : images;
+  document.getElementById("favoritesLink").addEventListener("click", event => {
+    event.preventDefault();
+    showingFavorites = true;
+    images = getFavorites().map(url => ({
+      url,
+      id: url,
+      title: "Saved Wallpaper"
+    }));
+    grid.innerHTML = "";
+    loadMoreButton.hidden = true;
+    document.getElementById("wallpaperHeading").textContent = "My Favorites";
+    render();
+    document.getElementById("wallpaperHeading").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
 
-    // Support common total-count fields returned by an API.
-    const returnedTotal = Number(data.total ?? data.totalHits ?? data.totalResults);
-    if (Number.isFinite(returnedTotal) && returnedTotal >= 0) {
-      totalResults = returnedTotal;
-    } else {
-      totalResults = currentImages.length;
-    }
+  loadMoreButton.addEventListener("click", () => loadWallpapers(false));
 
-    count.textContent = totalResults.toLocaleString() + " wallpaper(s) found";
-    renderImages(images, append);
-
-    const hasMore = images.length > 0
-      && currentImages.length < totalResults
-      && currentPage < MAX_PAGES;
-
-    moreButton.style.display = hasMore ? "block" : "none";
-
-  } catch (error) {
-    console.error("Wallpaper loading failed:", error);
-
-    if (!append) {
-      showEmpty("Wallpapers load nahi ho paaye. Internet check karke Try Again dabayein.");
-      const retry = document.createElement("button");
-      retry.className = "btn primary";
-      retry.textContent = "Try Again";
-      retry.style.marginTop = "14px";
-      retry.addEventListener("click", () => loadImages(false));
-      gallery.querySelector(".empty").appendChild(document.createElement("br"));
-      gallery.querySelector(".empty").appendChild(retry);
-    }
-
-    count.textContent = "Wallpaper loading error";
-  } finally {
-    loading = false;
-    moreButton.disabled = false;
-    moreButton.textContent = "Load More Wallpapers";
-  }
-}
-
-function toggleFavorite(item) {
-  const key = wallpaperKey(item);
-  let saved = readFavorites();
-
-  if (saved.some(entry => wallpaperKey(entry) === key)) {
-    saved = saved.filter(entry => wallpaperKey(entry) !== key);
-  } else {
-    saved.unshift(item);
-  }
-
-  writeFavorites(saved);
-
-  if (favoritesMode) {
-    loadImages(false);
-  } else {
-    renderImages(currentImages, false);
-  }
-
-  if (selectedWallpaper && wallpaperKey(selectedWallpaper) === key) {
-    updateModalFavoriteButton();
-  }
-}
-
-function openPreview(item) {
-  selectedWallpaper = item;
-  document.getElementById("modalImage").src = item.url;
-  document.getElementById("modalImage").alt = item.title || "Wallpaper preview";
-  document.getElementById("modalTitle").textContent = item.title || "HD Wallpaper";
-  document.getElementById("openOriginal").href = item.source || item.url;
-  updateModalFavoriteButton();
-  modal.classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-
-function closePreview() {
-  modal.classList.remove("open");
-  document.body.style.overflow = "";
-}
-
-function updateModalFavoriteButton() {
-  if (!selectedWallpaper) return;
-  document.getElementById("modalFavorite").textContent =
-    isFavorite(selectedWallpaper) ? "♥ Remove Favorite" : "♡ Save Favorite";
-}
-
-async function downloadWallpaper(item) {
-  if (!item || !item.url) return;
-
-  const filename = (item.title || "swaraj-wallpaper")
-    .replace(/[^a-z0-9_-]+/gi, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 70) || "swaraj-wallpaper";
-
-  try {
-    const response = await fetch(item.url, { mode: "cors" });
-    if (!response.ok) throw new Error("Download unavailable");
-
-    const blob = await response.blob();
-    const objectUrl = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-
-    link.href = objectUrl;
-    link.download = filename + (blob.type.includes("png") ? ".png" : ".jpg");
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-
-    setTimeout(() => URL.revokeObjectURL(objectUrl), 2000);
-  } catch (error) {
-    // Some external image providers block cross-origin downloads.
-    const opened = window.open(item.url, "_blank", "noopener,noreferrer");
-    if (!opened) {
-      alert("Browser ne new tab block kiya. Image par long-press karke Save image karein.");
-    } else {
-      alert("Image new tab mein kholi gayi hai. Wahan long-press karke Save image karein.");
-    }
-  }
-}
-
-function runSearch() {
-  favoritesMode = false;
-  favoritesButton.classList.remove("active");
-  currentPage = 1;
-  loadImages(false);
-}
-
-document.getElementById("searchBtn").addEventListener("click", runSearch);
-
-searchInput.addEventListener("input", () => {
-  clearTimeout(searchTimer);
-  searchTimer = setTimeout(runSearch, 450);
-});
-
-moreButton.addEventListener("click", () => {
-  if (!loading && currentPage < MAX_PAGES) {
-    currentPage++;
-    loadImages(true);
-  }
-});
-
-favoritesButton.addEventListener("click", () => {
-  favoritesMode = !favoritesMode;
-  favoritesButton.classList.toggle("active", favoritesMode);
-  favoritesButton.setAttribute("aria-pressed", String(favoritesMode));
-  loadImages(false);
-  document.getElementById("collection").scrollIntoView({ behavior: "smooth" });
-});
-
-document.getElementById("homeBtn").addEventListener("click", () => {
-  favoritesMode = false;
-  favoritesButton.classList.remove("active");
-  selectedCategory = "all";
-  searchInput.value = "";
-  currentPage = 1;
-  drawCategories();
-  loadImages(false);
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-document.getElementById("exploreBtn").addEventListener("click", () => {
-  document.getElementById("collection").scrollIntoView({ behavior: "smooth" });
-});
-
-document.getElementById("closeModal").addEventListener("click", closePreview);
-
-modal.addEventListener("click", event => {
-  if (event.target === modal) closePreview();
-});
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closePreview();
-});
-
-document.getElementById("modalDownload").addEventListener("click", () => {
-  if (selectedWallpaper) downloadWallpaper(selectedWallpaper);
-});
-
-document.getElementById("modalFavorite").addEventListener("click", () => {
-  if (selectedWallpaper) toggleFavorite(selectedWallpaper);
-});
-
-drawCategories();
-updateFavoriteCount();
-loadImages(false);
+  loadWallpapers(true);
+})();
 </script>
 </body>
 </html>
