@@ -3,34 +3,70 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b12">
-<meta name="description" content="Explore beautiful HD wallpapers for your phone and desktop with Swaraj Wallpapers.">
-<title>Swaraj Wallpapers — Discover Your Next Wallpaper</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swaraj Wallpapers</title>
 <style>
-:root {
-  --bg:#080b12;
-  --panel:#111725;
-  --line:#273148;
-  --text:#f4f7ff;
-  --muted:#9ba8bf;
-  --cyan:#58f3ff;
-  --purple:#a58bff;
+body{margin:0;background:#080b12;color:#f4f7ff;font-family:Arial,sans-serif}
+header{padding:20px;font-size:24px;font-weight:bold;border-bottom:1px solid #273148}
+span{color:#58f3ff}
+main{padding:25px;max-width:1200px;margin:auto}
+.hero{padding:35px;background:linear-gradient(120deg,#14263a,#151126);border-radius:18px}
+h1{font-size:clamp(36px,7vw,64px)}
+p{color:#aab5c8;line-height:1.7}
+button{padding:12px;border:1px solid #58f3ff;border-radius:9px;background:transparent;color:#58f3ff;cursor:pointer}
+input{width:95%;padding:13px;background:#111725;color:white;border:1px solid #273148;border-radius:9px;margin:15px 0}
+.categories{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{background:#111725;border:1px solid #273148;border-radius:12px;overflow:hidden}
+.card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.info{padding:10px}
+.info h3{font-size:14px}
+.empty{grid-column:1/-1;padding:25px;text-align:center;border:1px dashed #273148}
+footer{text-align:center;padding:25px;color:#aab5c8}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:15px}}
+</style>
+</head>
+<body>
+<header>SWARAJ<span>.</span> WALLPAPERS</header>
+<main>
+<section class="hero">
+<p>DISCOVER SOMETHING BEAUTIFUL</p>
+<h1>Your Screen.<br><span>Your Style.</span></h1>
+<p>Explore HD wallpapers for your phone and desktop.</p>
+<button onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">Explore Wallpapers ↓</button>
+</section>
+<section id="collection">
+<h2>Explore <span>Wallpapers</span></h2>
+<input id="search" placeholder="Search nature, galaxy, cars...">
+<div class="categories" id="categories"></div>
+<p id="count">Loading wallpapers...</p>
+<div class="grid" id="gallery"><div class="empty">Loading...</div></div>
+</section>
+</main>
+<footer>SWARAJ WALLPAPERS</footer>
+<script>
+const cats=["All","Nature","Galaxy","Anime","Gaming","Cars","Cyberpunk","Abstract"];
+let cat="All",images=[];
+function drawCats(){document.getElementById("categories").innerHTML=cats.map(c=>`<button onclick="cat='${c}';drawCats();loadImages()">${c}</button>`).join(" ")}
+async function loadImages(){
+const gallery=document.getElementById("gallery");
+gallery.innerHTML='<div class="empty">Loading wallpapers...</div>';
+try{
+const params=new URLSearchParams({category:cat==="All"?"all":cat.toLowerCase(),q:document.getElementById("search").value.trim(),page:"1"});
+const res=await fetch("/api/wallpapers?"+params);
+const data=await res.json();
+if(!res.ok)throw Error("API error");
+images=Array.isArray(data.images)?data.images:[];
+document.getElementById("count").textContent=(data.total||images.length)+" wallpapers found";
+if(!images.length){gallery.innerHTML='<div class="empty">No wallpapers found.</div>';return}
+gallery.innerHTML=images.map(w=>`<article class="card"><img src="${w.url}" alt="Wallpaper" loading="lazy"><div class="info"><h3>${String(w.title||"HD Wallpaper").replace(/[<>&"]/g,"")}</h3><button>Open Image ↗</button></div></article>`).join("");
+gallery.querySelectorAll("button").forEach((b,i)=>b.onclick=()=>window.open(images[i].source||images[i].url,"_blank"));
+gallery.querySelectorAll("img").forEach((img,i)=>img.onclick=()=>window.open(images[i].source||images[i].url,"_blank"));
+}catch(e){gallery.innerHTML='<div class="empty">Wallpaper API load nahi hui. Try Again.<br><br><button onclick="loadImages()">Try Again</button></div>';document.getElementById("count").textContent="Images unavailable";console.error(e)}
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-}
-button,input{font:inherit}
-button{
-  cursor:pointer;border:1px solid var(--cyan);
-  background:transparent;color:var(--cyan);
-  border-radius:11px;padding:11px 15px;
-  font-weight:700;transition:.2s;
-}
-button:hover{
-  background:var(--cyan);color:#061116;
-  box-shadow:0 0 20px #58f3ff30;
+document.getElementById("search").addEventListener("change",loadImages);
+drawCats();
+loadImages();
+</script>
+</body>
+</html>
